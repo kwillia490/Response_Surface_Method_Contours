@@ -43,7 +43,6 @@ Dataset = pd.read_csv(r'Path to CSV File')
 #Note: You can look at linear and cubic relationships as well (example commented below X). If you do this, remember to change the equations below in the makeRange definition
 y = Dataset['Depenedent Variable/Response Factor of Interest']
 X = MS([('Independent Variable 1', 'Independent Variable 2'), poly('Independent Variable 1', degree=2,raw=True), poly('Independent Variable 2', degree=2,raw=True)]).fit_transform(Dataset)
-# X = MS([('Alkylation', 'Hydrophilicity'), poly('Alkylation', degree=3), poly('Hydrophilicity', degree=3)]).fit_transform(Dataset)
 
 model = sm.OLS(y, X)
 results = model.fit()
@@ -242,4 +241,5 @@ ax3.set_ylabel('Independent Variable 2')
 fig.colorbar(surf, label= 'Depenedent Variable/Response Factor of Interest', pad=0.2)
 plt.savefig(r"Path to Output Folder\3D Response Surface Plot.tif", dpi=500)
 plt.show()
+
 
